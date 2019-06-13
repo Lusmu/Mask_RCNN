@@ -128,7 +128,7 @@ class BalloonDataset(utils.Dataset):
                 polygons = [r['shape_attributes'] for r in a['regions']] 
 
             image_id = a['filename']
-            existing = next((x for x in self.image_info if x["image_id"] == image_id), None)
+            existing = next((x for x in self.image_info if x["id"] == image_id), None)
             if existing is None:
                 # load_mask() needs the image size to convert polygons to masks.
                 # Unfortunately, VIA doesn't include it in JSON, so we must read
