@@ -144,7 +144,7 @@ class BalloonDataset(utils.Dataset):
                     width=width, height=height,
                     polygons=polygons)
             else:
-                existing[polygons].append(polygons)
+                existing[polygons].extend(polygons)
 
     def load_mask(self, image_id):
         """Generate instance masks for an image.
